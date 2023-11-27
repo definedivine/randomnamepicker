@@ -1,0 +1,188 @@
+    /* Include Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+body {
+    font-family: 'Lilita One', cursive;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(to right, #2d6ba5, #256096); /* Background gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.app-header {
+    text-align: center;
+    padding: 10px;
+}
+
+.app-header .title {
+    font-family: 'Lilita One', cursive;
+    font-size: 4em;
+    color: #1d3557;
+    margin-bottom: 20px;
+
+}
+
+
+/* Main content container */
+.app-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Name display section */
+.draw-section .name-display {
+    background-color: #ffafcc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    height: 150px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em;
+    -webkit-text-fill-color: #1d3557;
+}
+
+/* Settings panel styles */
+.settings-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1d3557;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    z-index: 2;
+    box-shadow: 1px 0px 3px rgba(0,0,0,0.4);
+    padding-left: 0px;
+    padding-top: 50px; 
+}
+
+.settings-panel.open {
+    width: 300px;
+}
+
+.settings-panel h2, .settings-panel label, .settings-panel p {
+    color: white;
+    text-align: left;
+    margin: 15px 10px; /* Increased spacing */
+}
+
+/* Settings input, textarea, and buttons */
+.settings-panel input[type="number"], .settings-panel textarea, .settings-panel button {
+    margin: 15px 10px;
+    padding: 8px 16px;
+    background-color: #a2d2ff;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Save button styles */
+#save {
+    background-color: #4cadaf; 
+    color: white;
+    transition: background-color 0.3s; 
+}
+
+#save:hover {
+    background-color: #459aa0; 
+}
+
+/* Close button styles */
+#closeSidebar {
+    background-color: #f44336; 
+    color: white;
+    transition: background-color 0.3s; 
+}
+
+#closeSidebar:hover {
+    background-color: #d32f2f; 
+}
+
+#names {
+    height: 200px; 
+    width: 200px;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* Settings button */
+.settings-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.settings-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Draw button styles */
+.draw-btn {
+    padding: 20px 80px;
+    font-family: 'Lilita One', cursive;
+    font-size: 1em;
+    background-color: #ea417f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.draw-btn:hover {
+    background-color: #1d3557;
+}
+
+.content-container {
+    flex: 1 0 auto;
+}
+
+.app-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.app-footer a {
+    color: #1d3557;
+    font-size: 1em;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.app-footer a:hover {
+    text-decoration: underline; /* Add underline on hover for interactivity */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .app-footer a {
+        font-size: 1em;
+    }
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Draw App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="title"><span>Lucky Draw App 🎉</span></h1>
+    </header>
+
+    <main class="app-main">
+        <section class="draw-section">
+            <div class="name-display" id="name-container">
+                <!-- Drawn name will appear here -->
+            </div>
+            <button class="draw-btn" id="draw">DRAW A NAME</button>
+        </section>
+
+        <aside class="settings-panel" id="sidebar">
+            <h2 class="settings-title">⚙️ Settings</h2>
+            <p class="settings-description">Select your settings and Draw Lucky name.</p>
+            <div class="setting-group name-list">
+                <label for="names">Name list:</label>
+                <textarea id="names" placeholder="Enter names separated by a newline" maxlength="500"></textarea>
+                <p class="error-message" hidden>Maximum of 500 names allowed.</p>
+            </div>
+            <div class="setting-group timer-setting">
+                <label for="drawingTime">Timer setting (seconds):</label>
+                <input type="number" id="drawingTime" min="1" max="10" step="1" value="5">
+            </div>
+            <div class="setting-group">
+                <label for="removeWinnerToggle">Remove winner from list:</label>
+                <input type="checkbox" id="removeWinnerToggle">
+            </div>
+            <div class="setting-actions">
+                <button class="btn save-settings" id="save">✔️ Save Settings</button>
+                <button class="btn close-panel" id="closeSidebar">X Close</button>
+            </div>
+        </aside>
+
+        <button class="settings-btn" id="menu" title="Settings">⚙️</button>
+    </main>
+
+    <footer class="app-footer">
+        <a href="https://www.buymeacoffee.com/blazpregelj" target="_blank">Buy me a coffee ☕️</a>
+    </footer>    
+
+    <script src="script.js"></script>
+</body>
+</html>
