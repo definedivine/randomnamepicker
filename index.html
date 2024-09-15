@@ -23,11 +23,15 @@
 
         <aside class="settings-panel" id="sidebar">
             <h2 class="settings-title">⚙️ Settings</h2>
-            <p class="settings-description">Select your settings and Draw Lucky name.</p>
+            <p class="settings-description">Select your settings and draw a lucky name.</p>
             <div class="setting-group name-list">
                 <label for="names">Name list:</label>
                 <textarea id="names" placeholder="Enter names separated by a newline" maxlength="500"></textarea>
                 <p class="error-message" hidden>Maximum of 500 names allowed.</p>
+            </div>
+            <div class="setting-group file-upload">
+                <label for="fileUpload">Upload names via file:</label>
+                <input type="file" id="fileUpload" accept=".txt,.csv">
             </div>
             <div class="setting-group timer-setting">
                 <label for="drawingTime">Timer setting (seconds):</label>
@@ -44,6 +48,14 @@
         </aside>
 
         <button class="settings-btn" id="menu" title="Settings">⚙️</button>
+
+        <!-- History Section -->
+        <section class="history-section">
+            <h2>📜 Drawn Names History</h2>
+            <ul id="history-list">
+                <!-- Drawn names will be listed here -->
+            </ul>
+        </section>
     </main>
 
     <footer class="app-footer">
