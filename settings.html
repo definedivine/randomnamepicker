@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: 'Lilita One', cursive;
+            text-align: center;
+            margin: 0;
+            background: linear-gradient(to right, #2d6ba5, #256096);
+            color: #fff;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        #names {
+            width: 80%;
+            height: 200px;
+            margin: 20px 0;
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #save {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4cadaf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #save:hover {
+            background-color: #459aa0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Settings</h2>
+    <textarea id="names" placeholder="Enter names separated by a newline"></textarea>
+    <br>
+    <button id="save">✔️ Save Names</button>
+
+    <script>
+        // Load existing names into textarea
+        window.addEventListener('load', () => {
+            const names = JSON.parse(window.opener.localStorage.getItem('names') || '[]');
+            document.getElementById('names').value = names.join('\n');
+        });
+
+        document.getElementById('save').addEventListener('click', function() {
+            var names = document.getElementById('names').value.split('\n').filter(name => name.trim() !== '');
+            window.opener.localStorage.setItem('names', JSON.stringify(names));
+            window.close();
+        });
+    </script>
+</body>
+</html>
